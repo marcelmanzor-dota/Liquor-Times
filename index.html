@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liquor Time · Hialeah liquor store on E 49th St</title>
+<meta name="description" content="Liquor Time — neighborhood liquor store at 830 E 49th St, Hialeah FL. Rum, tequila, whisky, wine and cold beer at good prices. Open 7 days. (305) 681-1625.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<meta property="og:title" content="Liquor Time · Hialeah">
+<meta property="og:description" content="Every time is Liquor Time. 830 E 49th St, Hialeah FL · Open 7 days.">
+<meta property="og:image" content="images/store-shelves.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LiquorStore","name":"Liquor Time","image":"images/store-shelves.jpg","telephone":"+1-305-681-1625",
+"address":{"@type":"PostalAddress","streetAddress":"830 E 49th St","addressLocality":"Hialeah","addressRegion":"FL","postalCode":"33013","addressCountry":"US"},
+"geo":{"@type":"GeoCoordinates","latitude":25.8671845,"longitude":-80.2661537},
+"openingHoursSpecification":[
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Sunday"],"opens":"10:00","closes":"21:00"},
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"09:30","closes":"23:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"103"}}
+</script>
+<style>
+:root{
+  color-scheme:dark;
+  --ink:#120D0A;      /* warm black, the room */
+  --cask:#1D1510;     /* surfaces */
+  --cask-2:#2A1F17;   /* raised surfaces / lines */
+  --ember:#C9341B;    /* logo red-orange */
+  --amber:#F2A516;    /* logo gold */
+  --label:#F3E7D3;    /* label cream, main text */
+  --smoke:#B3A391;    /* muted text (AA on ink) */
+  --line:rgba(243,231,211,.12);
+  --pour:linear-gradient(180deg,var(--amber) 0%,#E57A17 55%,var(--ember) 100%);
+  --display:"Marcellus",Georgia,serif;
+  --display-sc:"Marcellus SC","Marcellus",Georgia,serif;
+  --body:"Hanken Grotesk",system-ui,sans-serif;
+  --mono:"Spline Sans Mono",ui-monospace,monospace;
+  --wrap:min(1180px,100% - 40px);
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--label);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+.wrap{width:var(--wrap);margin-inline:auto}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2.1rem,4.6vw,3.6rem)}
+.sc{font-family:var(--display-sc)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--amber);color:var(--ink);padding:8px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font:600 1rem/1 var(--body);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .2s,background-color .2s,border-color .2s,color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-pour{background:var(--pour);color:var(--ink);box-shadow:0 8px 30px -10px rgba(229,122,23,.7)}
+.btn-pour:hover{transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(243,231,211,.28);color:var(--label)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+/* ---------- header ---------- */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(18,13,10,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:20px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.brand img{height:44px;width:auto}
+.brand span{font-family:var(--display-sc);font-size:1.45rem;letter-spacing:.02em;line-height:1}
+.nav{display:flex;gap:26px;list-style:none}
+.nav a{text-decoration:none;color:var(--smoke);font-weight:500;font-size:.98rem;padding:6px 0;transition:color .2s}
+.nav a:hover{color:var(--label)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang button{background:none;border:0;color:var(--smoke);font:500 .8rem var(--mono);letter-spacing:.06em;min-width:44px;min-height:34px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--label);color:var(--ink)}
+.bar .btn{min-height:42px;padding:0 18px;font-size:.95rem}
+@media (max-width:860px){.nav{display:none}.brand span{font-size:1.2rem}.bar .call-txt{display:none}.bar .btn{padding:0 13px}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:64px 0 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;background:radial-gradient(closest-side,rgba(229,122,23,.18),transparent 70%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(3rem,8.4vw,7rem);margin:18px 0 22px}
+.hero h1 em{font-style:normal;background:var(--pour);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:1.18rem;color:var(--smoke);max-width:34ch}
+.lede strong{color:var(--label);font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 34px}
+.proof{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:.95rem;color:var(--smoke)}
+.stars{display:inline-flex;gap:2px;color:var(--amber)}
+.stars svg{width:16px;height:16px}
+.proof b{font-family:var(--display);font-size:1.6rem;font-weight:400;color:var(--label);line-height:1}
+
+/* signature: the bottle gauge */
+.gauge{position:relative;justify-self:center;width:min(360px,100%)}
+.gauge svg{width:100%;height:auto;overflow:visible}
+.gauge .glass{fill:rgba(243,231,211,.04);stroke:rgba(243,231,211,.35);stroke-width:2}
+.gauge .tick line{stroke:rgba(243,231,211,.4);stroke-width:1.5}
+.gauge .tick text{fill:var(--smoke);font:500 11px var(--mono)}
+.gauge .tick.now line{stroke:var(--label)}
+.gauge .tick.now text{fill:var(--label)}
+.gauge .liquid{transition:transform 1.6s cubic-bezier(.2,.8,.2,1)}
+.wave{animation:slosh 6s ease-in-out infinite}
+@keyframes slosh{0%,100%{transform:translateX(0)}50%{transform:translateX(-60px)}}
+.status{margin-top:18px;text-align:center}
+.status .pill{display:inline-flex;align-items:center;gap:8px;font:500 .8rem var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:999px;background:var(--cask);border:1px solid var(--line)}
+.status .dot{width:8px;height:8px;border-radius:50%;background:#7BC86C;box-shadow:0 0 0 4px rgba(123,200,108,.18)}
+.status.closed .dot{background:var(--ember);box-shadow:0 0 0 4px rgba(201,52,27,.2)}
+.status p{margin-top:10px;font-family:var(--display);font-size:1.5rem;line-height:1.2}
+.status small{display:block;color:var(--smoke);font-family:var(--body);font-size:.9rem;margin-top:4px}
+@media (max-width:860px){
+  .hero{padding:36px 0 64px}
+  .hero-grid{grid-template-columns:1fr}
+  .gauge{display:grid;grid-template-columns:120px 1fr;align-items:center;gap:18px;width:100%;margin-top:6px;padding:18px;border:1px solid var(--line);border-radius:var(--r);background:var(--cask)}
+  .gauge .tick text{display:none}
+  .status{margin:0;text-align:left}
+  .status p{font-size:1.3rem}
+}
+
+/* ---------- topic strip ---------- */
+.said{border-block:1px solid var(--line);background:var(--cask)}
+.said .wrap{display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:22px 0}
+.said .eyebrow{color:var(--smoke)}
+.said ul{display:flex;flex-wrap:wrap;gap:10px;list-style:none}
+.said li{font-family:var(--display);font-size:1.25rem;padding:4px 16px;border:1px solid var(--line);border-radius:999px}
+.said li:nth-child(odd){color:var(--amber);border-color:rgba(242,165,22,.35)}
+
+/* ---------- shelves ---------- */
+section{scroll-margin-top:80px}
+.shelves{padding:110px 0 90px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:44px}
+.head p{color:var(--smoke);max-width:46ch}
+.head h2{margin-top:12px}
+.mosaic{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+.shot{position:relative;border-radius:var(--r);overflow:hidden;background:var(--cask);margin:0}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.shot:hover img{transform:scale(1.035)}
+.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;background:linear-gradient(transparent,rgba(18,13,10,.88));font-family:var(--display);font-size:1.3rem}
+.shot figcaption .k{display:block;font:500 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:4px}
+.mosaic{grid-template-rows:repeat(2,clamp(200px,24vw,300px))}
+.shot.wide{grid-row:span 2}
+@media (max-width:760px){.mosaic{grid-template-columns:1fr;grid-template-rows:none}.shot.wide{grid-row:auto;aspect-ratio:16/10}.shot.tall{aspect-ratio:4/3}}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:1px;margin-top:52px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.cat{background:var(--ink);padding:22px 20px}
+.cat h3{font-size:1.45rem}
+.cat p{color:var(--smoke);font-size:.92rem;margin-top:6px;line-height:1.45}
+
+/* ---------- reviews ---------- */
+.reviews{padding:100px 0 110px;background:radial-gradient(80% 60% at 50% 0%,rgba(201,52,27,.12),transparent 70%),var(--cask);border-top:1px solid var(--line)}
+.score{display:flex;align-items:center;gap:22px}
+.score .big{font-family:var(--display);font-size:clamp(4rem,9vw,6.5rem);line-height:.9;background:var(--pour);-webkit-background-clip:text;background-clip:text;color:transparent}
+.score small{color:var(--smoke);display:block;font-size:.92rem}
+.feature{max-width:900px;margin:10px 0 60px}
+.feature blockquote{font-family:var(--display);font-size:clamp(1.6rem,3.3vw,2.5rem);line-height:1.22}
+.feature blockquote::before{content:"“";color:var(--amber)}
+.feature blockquote::after{content:"”";color:var(--amber)}
+.feature cite{display:block;margin-top:16px;font:500 .8rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--smoke);font-style:normal}
+.marquee{--gap:14px;display:flex;overflow:hidden;gap:var(--gap);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee+.marquee{margin-top:14px}
+.track{display:flex;gap:var(--gap);flex:none;min-width:100%;animation:scroll 70s linear infinite}
+.marquee.rev .track{animation-direction:reverse;animation-duration:80s}
+.marquee:hover .track,.marquee:focus-within .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(calc(-100% - var(--gap)))}}
+.card{flex:none;width:320px;background:var(--ink);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.card q{quotes:none;font-size:1rem;line-height:1.5}
+.card footer{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.85rem;color:var(--smoke)}
+.card footer b{color:var(--label);font-weight:600}
+.card .stars svg{width:13px;height:13px}
+.src{margin-top:26px;font-size:.88rem;color:var(--smoke)}
+.src a{color:var(--amber)}
+
+/* ---------- visit ---------- */
+.visit{padding:110px 0}
+.visit-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+.hours{list-style:none;margin-top:26px;border-top:1px solid var(--line)}
+.hours li{display:flex;justify-content:space-between;padding:13px 4px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.95rem;color:var(--smoke)}
+.hours li span:first-child{font-family:var(--body);font-weight:500;font-size:1rem}
+.hours li.today{color:var(--label);background:linear-gradient(90deg,rgba(242,165,22,.12),transparent);padding-inline:14px;border-radius:8px}
+.hours li.today span:first-child::after{content:attr(data-today);margin-left:10px;font:500 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.addr{margin-top:30px;display:grid;gap:14px}
+.addr a,.addr div{display:flex;gap:14px;align-items:flex-start;text-decoration:none;font-size:1.05rem}
+.addr svg{width:22px;height:22px;flex:none;color:var(--amber);margin-top:3px}
+.addr a:hover{color:var(--amber)}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3.4;background:var(--cask)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.05)}
+.visit .cta-row{margin:28px 0 0}
+@media (max-width:860px){.visit-grid{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+.foot{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--smoke);font-size:.92rem}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+.foot img{height:120px;width:auto}
+.foot .legal{margin-top:30px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem}
+
+/* ---------- age gate ---------- */
+.gate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(10,7,5,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.gate[hidden]{display:none}
+.gate-box{max-width:420px;text-align:center;background:var(--cask);border:1px solid var(--line);border-radius:20px;padding:40px 30px}
+.gate-box img{height:150px;width:auto;margin:0 auto 18px}
+.gate-box h2{font-size:2rem}
+.gate-box p{color:var(--smoke);margin:10px 0 26px}
+.gate-box .cta-row{justify-content:center;margin:0}
+.gate-no{display:none;margin-top:16px;color:var(--label)}
+
+/* reveal */
+.hero .rv{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:.001;transform:translateY(16px)}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .marquee{overflow-x:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<!-- 21+ age gate -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title" hidden>
+  <div class="gate-box">
+    <img src="images/logo-full-light.png" alt="Liquor Time logo">
+    <h2 id="gate-title" data-i18n="gateTitle">Are you 21 or older?</h2>
+    <p data-i18n="gateText">You must be of legal drinking age to enter this site.</p>
+    <div class="cta-row">
+      <button class="btn btn-pour" id="gate-yes" data-i18n="gateYes">Yes, I'm 21+</button>
+      <button class="btn btn-ghost" id="gate-no" data-i18n="gateNoBtn">No</button>
+    </div>
+    <p class="gate-no" id="gate-msg" data-i18n="gateNo">Sorry — come back when you're 21.</p>
+  </div>
+</div>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Liquor Time, home">
+      <img src="images/logo-mark-light.png" alt="" width="21" height="44">
+      <span>Liquor Time</span>
+    </a>
+    <ul class="nav">
+      <li><a href="#shelves" data-i18n="navShelves">On the shelves</a></li>
+      <li><a href="#reviews" data-i18n="navReviews">Reviews</a></li>
+      <li><a href="#visit" data-i18n="navVisit">Hours &amp; location</a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <a class="btn btn-pour" href="tel:+13056811625" aria-label="Call Liquor Time">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span class="call-txt">(305) 681-1625</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow rv" data-i18n="heroEyebrow">830 E 49th St · Hialeah, FL</p>
+      <h1 class="rv"><span data-i18n="heroH1a">Every time is</span><br><em>Liquor Time.</em></h1>
+      <p class="lede rv" data-i18n-html="heroLede">Your neighborhood liquor store on 49th Street — <strong>rum, tequila, whisky, wine and cold beer</strong> at prices locals have trusted for years.</p>
+      <div class="cta-row rv">
+        <a class="btn btn-pour" href="https://www.google.com/maps/dir/?api=1&destination=Liquor+Time+830+E+49th+St+Hialeah+FL+33013" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+          <span data-i18n="ctaDirections">Get directions</span>
+        </a>
+        <a class="btn btn-ghost" href="tel:+13056811625">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          <span data-i18n="ctaCall">Call the store</span>
+        </a>
+      </div>
+      <div class="proof rv">
+        <b>4.4</b>
+        <span class="stars" aria-hidden="true" data-stars="4.4"></span>
+        <span data-i18n="proof">103 Google reviews</span>
+      </div>
+    </div>
+
+    <!-- Signature: the bottle fills with today's remaining open hours -->
+    <div class="gauge rv" aria-live="polite">
+      <svg viewBox="0 0 240 420" role="img" aria-labelledby="gauge-desc">
+        <desc id="gauge-desc">Bottle gauge showing how much of today's opening hours are left.</desc>
+        <defs>
+          <linearGradient id="pour" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F2A516"/><stop offset=".55" stop-color="#E57A17"/><stop offset="1" stop-color="#C9341B"/>
+          </linearGradient>
+          <clipPath id="bottle-clip">
+            <path id="bottle-path" d="M100 18h40v86c0 14 8 22 22 30 22 12 34 30 34 58v196c0 14-10 24-24 24H68c-14 0-24-10-24-24V192c0-28 12-46 34-58 14-8 22-16 22-30z"/>
+          </clipPath>
+        </defs>
+        <rect x="96" y="2" width="48" height="22" rx="5" fill="#F3E7D3" opacity=".9"/>
+        <g clip-path="url(#bottle-clip)">
+          <g class="liquid" id="liquid" style="transform:translateY(420px)">
+            <path class="wave" fill="url(#pour)" d="M0 150 q30 -12 60 0 t60 0 t60 0 t60 0 t60 0 V700 H0z"/>
+          </g>
+        </g>
+        <use href="#bottle-path" class="glass"/>
+        <g id="ticks"></g>
+      </svg>
+      <div class="status" id="status">
+        <span class="pill"><span class="dot"></span><span id="st-label">—</span></span>
+        <p id="st-main">—</p>
+        <small id="st-sub"></small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="said">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="saidLabel">What reviewers mention most</span>
+    <ul>
+      <li data-i18n="t1">Great prices</li>
+      <li data-i18n="t2">Wide selection</li>
+      <li data-i18n="t3">Friendly staff</li>
+      <li data-i18n="t4">Clean &amp; organized</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ SHELVES ============ -->
+<section class="shelves" id="shelves">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <p class="eyebrow" data-i18n="shelvesEyebrow">Inside the store</p>
+        <h2 data-i18n-html="shelvesH2">Small store.<br>Big shelves.</h2>
+      </div>
+      <p data-i18n="shelvesP">Floor-to-ceiling rum, wine and spirits, beer stacked by the case, and a locked case for the special bottles. If you need it for tonight, it's probably here.</p>
+    </div>
+    <div class="mosaic">
+      <figure class="shot wide rv">
+        <img src="images/store-shelves.jpg" alt="Long shelves of wine, rum and spirits beside stacked cases of Corona, Coronita, Heineken and Presidente beer" loading="lazy" width="1600" height="899">
+        <figcaption><span class="k" data-i18n="cap1k">Main wall</span><span data-i18n="cap1">Wine, rum &amp; beer by the case</span></figcaption>
+      </figure>
+      <figure class="shot tall rv">
+        <img src="images/store-aisle.jpg" alt="Store aisle with gift boxes, liqueurs and the beer coolers at the back" loading="lazy" width="800" height="1421" style="object-position:50% 30%">
+        <figcaption><span class="k" data-i18n="cap2k">The aisle</span><span data-i18n="cap2">Gift sets, liqueurs &amp; cold beer</span></figcaption>
+      </figure>
+      <figure class="shot tall rv">
+        <img src="images/premium-case.jpg" alt="Glass display case with premium tequila, bourbon and brandy bottles" loading="lazy" width="800" height="1066" style="object-position:50% 25%">
+        <figcaption><span class="k" data-i18n="cap3k">Top shelf</span><span data-i18n="cap3">The premium case</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="cats rv" role="list">
+      <div class="cat" role="listitem"><h3 data-i18n="c1">Rum</h3><p data-i18n="c1p">Caribbean classics, from everyday gallons to sipping bottles.</p></div>
+      <div class="cat" role="listitem"><h3 data-i18n="c2">Tequila</h3><p data-i18n="c2p">Blancos, reposados and cristalinos.</p></div>
+      <div class="cat" role="listitem"><h3 data-i18n="c3">Whisky &amp; Scotch</h3><p data-i18n="c3p">Bourbon, Irish and the big Scotch labels.</p></div>
+      <div class="cat" role="listitem"><h3 data-i18n="c4">Wine</h3><p data-i18n="c4p">Reds, whites, rosé and bubbly for any budget.</p></div>
+      <div class="cat" role="listitem"><h3 data-i18n="c5">Cold beer</h3><p data-i18n="c5p">Singles, 12-packs and cases in the cooler.</p></div>
+      <div class="cat" role="listitem"><h3 data-i18n="c6">Gifts &amp; mixers</h3><p data-i18n="c6p">Gift sets, cordials, cream liqueurs and mixers.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <p class="eyebrow" data-i18n="revEyebrow">From our customers</p>
+        <h2 data-i18n="revH2">Hialeah keeps coming back.</h2>
+      </div>
+      <div class="score">
+        <span class="big">4.4</span>
+        <div><span class="stars" aria-hidden="true" data-stars="4.4"></span><small data-i18n="revCount">103 reviews on Google</small></div>
+      </div>
+    </div>
+    <figure class="feature rv">
+      <blockquote>This is one of my old time favorites! I've been coming here for years! The service is exclusive and they have just about any type of bottle of liquor that you need!</blockquote>
+      <cite>Henry Aramburo · Google review</cite>
+    </figure>
+  </div>
+  <div class="marquee" id="m1" aria-label="Customer reviews"></div>
+  <div class="marquee rev" id="m2" aria-label="More customer reviews"></div>
+  <div class="wrap">
+    <p class="src" data-i18n-html="revSrc">Reviews shown in the customer's own words, as posted on <a href="https://www.google.com/maps/place/Liquor+Time/@25.8671845,-80.2661537,17z/data=!4m8!3m7!1s0x88d9b07aa8d1263f:0x304bb04e0bec539!8m2!3d25.8671845!4d-80.2661537!9m1!1b1" target="_blank" rel="noopener">Google Maps</a>.</p>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div class="rv">
+      <p class="eyebrow" data-i18n="visitEyebrow">Hours &amp; location</p>
+      <h2 data-i18n-html="visitH2">Open seven days,<br>late on weekends.</h2>
+      <ul class="hours" id="hours"></ul>
+      <div class="addr">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Liquor+Time+830+E+49th+St+Hialeah+FL+33013" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>830 E 49th St<br>Hialeah, FL 33013</span>
+        </a>
+        <a href="tel:+13056811625">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          <span>(305) 681-1625</span>
+        </a>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+          <span data-i18n="access">Wheelchair-accessible entrance</span>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-pour" href="https://www.google.com/maps/dir/?api=1&destination=Liquor+Time+830+E+49th+St+Hialeah+FL+33013" target="_blank" rel="noopener"><span data-i18n="ctaDirections">Get directions</span></a>
+      </div>
+    </div>
+    <div class="map rv">
+      <iframe title="Map showing Liquor Time at 830 E 49th St, Hialeah" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Liquor%20Time%2C%20830%20E%2049th%20St%2C%20Hialeah%2C%20FL%2033013&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <img src="images/logo-full-light.png" alt="Liquor Time — Every time is Liquor Time" loading="lazy">
+      <div>
+        <p>830 E 49th St, Hialeah, FL 33013</p>
+        <p><a href="tel:+13056811625">(305) 681-1625</a></p>
+      </div>
+    </div>
+    <div class="legal">
+      <span data-i18n="legal1">You must be 21+ to purchase alcohol. Please drink responsibly — don't drink and drive.</span>
+      <span>© <span id="yr"></span> Liquor Time</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  /* ---------------- data ---------------- */
+  // 0=Sun … 6=Sat ; minutes from midnight (store's local time, America/New_York)
+  const HOURS = {0:[600,1260],1:[600,1260],2:[600,1260],3:[600,1260],4:[600,1260],5:[570,1380],6:[570,1380]};
+  const REVIEWS = [
+    ["Jonathan Burke",5,"Lugar perfecto, precio maravilloso. Excelente servicio. Wonderful place, excellent service."],
+    ["Nayimis Del Rio",5,"Clean and organized. You can find everything in there."],
+    ["Claude M Barnes",5,"Awesome place to purchase liquor, inexpensive, clean place, great customer service."],
+    ["Irasys",5,"Buen servicio. Buena sugerencia de bebidas a consumir. Me siento satisfecha del trato y de las bebidas que compro cada vez que visito el lugar."],
+    ["W B. Conner",5,"Great variety, prices, and treated respectfully."],
+    ["Jose R",5,"Been going for years — friendly owner and conveniently close by."],
+    ["Dominican Vibes",5,"Small place but wide selection with low prices."],
+    ["Michel Olivan",5,"Muy amables. Buen trato. Familiar."],
+    ["Stephen Tomkins",5,"Friendly, helpful and convenient."],
+    ["Alma Barberena",5,"They have great prices and nice selection."],
+    ["Gerald Robertson",5,"Great customer service, very nice staff."],
+    ["Victor Costales",5,"Es pequeño pero la atención es perfecta."],
+    ["Redbear32 SOSA",4,"Great little store with good selection and prices."],
+    ["AGUILAR CAMILO",5,"Where you can find a good price. Excellent services."],
+    ["Jean Coronado",4,"Gran variedad de bebidas para todo presupuesto."],
+    ["Nosferatu",4,"Great prices!!! Lots of specials."],
+    ["La Midget Marty",5,"Found what I was looking for — great place."],
+    ["Jack Suarez",5,"Muy buen surtido y buenos precios."],
+    ["Santiago Nocedo",4,"Para todo tipo de bebidas a buen precio."],
+    ["Miguel Angel Camejo",5,"De todo y muy buena calidad."]
+  ];
+
+  const T = {
+    en:{skip:"Skip to content",gateTitle:"Are you 21 or older?",gateText:"You must be of legal drinking age to enter this site.",gateYes:"Yes, I'm 21+",gateNoBtn:"No",gateNo:"Sorry — come back when you're 21.",
+      navShelves:"On the shelves",navReviews:"Reviews",navVisit:"Hours & location",heroEyebrow:"830 E 49th St · Hialeah, FL",heroH1a:"Every time is",
+      heroLede:"Your neighborhood liquor store on 49th Street — <strong>rum, tequila, whisky, wine and cold beer</strong> at prices locals have trusted for years.",
+      ctaDirections:"Get directions",ctaCall:"Call the store",proof:"103 Google reviews",saidLabel:"What reviewers mention most",t1:"Great prices",t2:"Wide selection",t3:"Friendly staff",t4:"Clean & organized",
+      shelvesEyebrow:"Inside the store",shelvesH2:"Small store.<br>Big shelves.",shelvesP:"Floor-to-ceiling rum, wine and spirits, beer stacked by the case, and a locked case for the special bottles. If you need it for tonight, it's probably here.",
+      cap1k:"Main wall",cap1:"Wine, rum & beer by the case",cap2k:"The aisle",cap2:"Gift sets, liqueurs & cold beer",cap3k:"Top shelf",cap3:"The premium case",
+      c1:"Rum",c1p:"Caribbean classics, from everyday gallons to sipping bottles.",c2:"Tequila",c2p:"Blancos, reposados and cristalinos.",c3:"Whisky & Scotch",c3p:"Bourbon, Irish and the big Scotch labels.",c4:"Wine",c4p:"Reds, whites, rosé and bubbly for any budget.",c5:"Cold beer",c5p:"Singles, 12-packs and cases in the cooler.",c6:"Gifts & mixers",c6p:"Gift sets, cordials, cream liqueurs and mixers.",
+      revEyebrow:"From our customers",revH2:"Hialeah keeps coming back.",revCount:"103 reviews on Google",
+      revSrc:'Reviews shown in the customer\'s own words, as posted on <a href="https://www.google.com/maps/place/Liquor+Time/@25.8671845,-80.2661537,17z/data=!4m8!3m7!1s0x88d9b07aa8d1263f:0x304bb04e0bec539!8m2!3d25.8671845!4d-80.2661537!9m1!1b1" target="_blank" rel="noopener">Google Maps</a>.',
+      visitEyebrow:"Hours & location",visitH2:"Open seven days,<br>late on weekends.",access:"Wheelchair-accessible entrance",legal1:"You must be 21+ to purchase alcohol. Please drink responsibly — don't drink and drive.",
+      days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],today:"Today",open:"Open now",closed:"Closed now",
+      left:(h,m)=>`${h?h+"h ":""}${m}m of pour left`,closes:t=>`Closes at ${t}`,opensAt:(d,t)=>`Opens ${d} at ${t}`,tomorrow:"tomorrow",todayW:"today",lastCall:"Last call soon"},
+    es:{skip:"Ir al contenido",gateTitle:"¿Tienes 21 años o más?",gateText:"Debes tener la edad legal para tomar alcohol para entrar a este sitio.",gateYes:"Sí, tengo 21+",gateNoBtn:"No",gateNo:"Lo sentimos — vuelve cuando tengas 21.",
+      navShelves:"En los estantes",navReviews:"Reseñas",navVisit:"Horario y ubicación",heroEyebrow:"830 E 49th St · Hialeah, FL",heroH1a:"Every time is",
+      heroLede:"Tu licorería de barrio en la calle 49 — <strong>ron, tequila, whisky, vino y cerveza fría</strong> a precios en los que el barrio confía hace años.",
+      ctaDirections:"Cómo llegar",ctaCall:"Llamar a la tienda",proof:"103 reseñas en Google",saidLabel:"Lo que más mencionan las reseñas",t1:"Buenos precios",t2:"Gran surtido",t3:"Trato amable",t4:"Limpio y organizado",
+      shelvesEyebrow:"Dentro de la tienda",shelvesH2:"Tienda pequeña.<br>Estantes grandes.",shelvesP:"Ron, vino y licores del piso al techo, cerveza por caja y una vitrina con las botellas especiales. Si lo necesitas para esta noche, seguro está aquí.",
+      cap1k:"Pared principal",cap1:"Vino, ron y cerveza por caja",cap2k:"El pasillo",cap2:"Sets de regalo, licores y cerveza fría",cap3k:"Lo mejor",cap3:"La vitrina premium",
+      c1:"Ron",c1p:"Clásicos del Caribe, del galón de diario a la botella para saborear.",c2:"Tequila",c2p:"Blancos, reposados y cristalinos.",c3:"Whisky y Scotch",c3p:"Bourbon, irlandés y las grandes marcas escocesas.",c4:"Vino",c4p:"Tintos, blancos, rosados y espumosos para todo bolsillo.",c5:"Cerveza fría",c5p:"Sueltas, 12-packs y cajas en la nevera.",c6:"Regalos y mezcladores",c6p:"Sets de regalo, cremas, licores y mezcladores.",
+      revEyebrow:"De nuestros clientes",revH2:"Hialeah siempre vuelve.",revCount:"103 reseñas en Google",
+      revSrc:'Reseñas en las palabras de cada cliente, tal como aparecen en <a href="https://www.google.com/maps/place/Liquor+Time/@25.8671845,-80.2661537,17z/data=!4m8!3m7!1s0x88d9b07aa8d1263f:0x304bb04e0bec539!8m2!3d25.8671845!4d-80.2661537!9m1!1b1" target="_blank" rel="noopener">Google Maps</a>.',
+      visitEyebrow:"Horario y ubicación",visitH2:"Abierto los siete días,<br>hasta tarde el fin de semana.",access:"Entrada accesible para sillas de ruedas",legal1:"Debes tener 21+ para comprar alcohol. Toma con responsabilidad — si tomas, no manejes.",
+      days:["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"],today:"Hoy",open:"Abierto ahora",closed:"Cerrado ahora",
+      left:(h,m)=>`Quedan ${h?h+"h ":""}${m}m`,closes:t=>`Cierra a las ${t}`,opensAt:(d,t)=>`Abre ${d} a las ${t}`,tomorrow:"mañana",todayW:"hoy",lastCall:"Última llamada"}
+  };
+
+  const store = { get:k=>{try{return localStorage.getItem(k)}catch(e){return null}}, set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}} };
+  let lang = store.get("lt-lang") || ((navigator.language||"").toLowerCase().startsWith("es") ? "es" : "en");
+
+  /* ---------------- helpers ---------------- */
+  const star = '<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>';
+  const starHalf = '<svg viewBox="0 0 20 20"><defs><linearGradient id="hs"><stop offset=".5" stop-color="currentColor"/><stop offset=".5" stop-color="currentColor" stop-opacity=".25"/></linearGradient></defs><path fill="url(#hs)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>';
+  const starOff = '<svg viewBox="0 0 20 20" fill="currentColor" opacity=".25"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>';
+  const starsFor = n => [1,2,3,4,5].map(i => n>=i?star : n>=i-.6?starHalf:starOff).join("");
+  document.querySelectorAll("[data-stars]").forEach(el => el.innerHTML = starsFor(+el.dataset.stars));
+  const esc = s => s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const fmt = (min, l) => {
+    let h = Math.floor(min/60)%24, m = min%60;
+    const ap = h>=12 ? "PM" : "AM"; h = h%12 || 12;
+    return `${h}${m?":"+String(m).padStart(2,"0"):""} ${l==="es"? (ap==="AM"?"a.m.":"p.m.") : ap}`;
+  };
+  function storeNow(){
+    const p = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(new Date());
+    const g = t => p.find(x=>x.type===t).value;
+    return { day:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(g("weekday")), min:(+g("hour"))*60 + (+g("minute")) };
+  }
+
+  /* ---------------- reviews marquee ---------------- */
+  const cardHTML = r => `<article class="card"><q>${esc(r[2])}</q><footer><b>${esc(r[0])}</b><span class="stars" role="img" aria-label="${r[1]} out of 5 stars">${starsFor(r[1])}</span></footer></article>`;
+  function fill(id, list){
+    const el = document.getElementById(id), html = list.map(cardHTML).join("");
+    el.innerHTML = `<div class="track">${html}</div><div class="track" aria-hidden="true">${html}</div>`;
+  }
+  fill("m1", REVIEWS.slice(0,10)); fill("m2", REVIEWS.slice(10));
+
+  /* ---------------- bottle gauge + hours ---------------- */
+  const TOP = 140, BOTTOM = 412;   // liquid range inside the bottle body (svg units)
+  function drawTicks(open, close){
+    const g = document.getElementById("ticks"); let out = "";
+    const span = close - open;
+    for (let t = Math.ceil(open/60)*60; t <= close; t += 60){
+      const yy = TOP + (t-open)/span*(BOTTOM-TOP);
+      const label = (t/60)%2===0 || t===close ? fmt(t,lang).replace(":00","") : "";
+      out += `<g class="tick" data-t="${t}"><line x1="200" x2="${label?214:208}" y1="${yy}" y2="${yy}"/>${label?`<text x="219" y="${yy+4}">${label}</text>`:""}</g>`;
+    }
+    g.innerHTML = out;
+  }
+  function renderStatus(){
+    const L = T[lang], {day,min} = storeNow(), [o,c] = HOURS[day];
+    const st = document.getElementById("status"), liquid = document.getElementById("liquid");
+    drawTicks(o,c);
+    let level; // 0 = empty, 1 = full
+    if (min>=o && min<c){
+      const left = c-min; level = left/(c-o);
+      st.classList.remove("closed");
+      document.getElementById("st-label").textContent = left<=30 ? L.lastCall : L.open;
+      document.getElementById("st-main").textContent = L.left(Math.floor(left/60), left%60);
+      document.getElementById("st-sub").textContent = L.closes(fmt(c,lang));
+      document.querySelectorAll("#ticks .tick").forEach(t=>t.classList.toggle("now", Math.abs(+t.dataset.t - min) < 30));
+    } else {
+      const before = min<o, nd = before?day:(day+1)%7;
+      level = before ? 1 : 0.04;
+      st.classList.add("closed");
+      document.getElementById("st-label").textContent = L.closed;
+      document.getElementById("st-main").textContent = L.opensAt(before?L.todayW:L.tomorrow, fmt(HOURS[nd][0],lang));
+      document.getElementById("st-sub").textContent = "";
+    }
+    const y = TOP + (1-level)*(BOTTOM-TOP) - 150; // wave path baseline sits at y=150
+    requestAnimationFrame(()=> liquid.style.transform = `translateY(${y}px)`);
+
+    // hours list
+    const order = [1,2,3,4,5,6,0];
+    document.getElementById("hours").innerHTML = order.map(d =>
+      `<li class="${d===day?"today":""}"><span ${d===day?`data-today="${L.today}"`:""}>${L.days[d]}</span><span>${fmt(HOURS[d][0],lang)} – ${fmt(HOURS[d][1],lang)}</span></li>`).join("");
+  }
+
+  /* ---------------- i18n ---------------- */
+  function applyLang(l){
+    lang = l; store.set("lt-lang", l); document.documentElement.lang = l;
+    const D = T[l];
+    document.querySelectorAll("[data-i18n]").forEach(el => { const v = D[el.dataset.i18n]; if (typeof v==="string") el.textContent = v; });
+    document.querySelectorAll("[data-i18n-html]").forEach(el => { const v = D[el.dataset.i18nHtml]; if (typeof v==="string") el.innerHTML = v; });
+    document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang===l)));
+    renderStatus();
+  }
+  document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => applyLang(b.dataset.lang)));
+
+  /* ---------------- age gate ---------------- */
+  const gate = document.getElementById("gate");
+  if (store.get("lt-21") !== "yes"){ gate.hidden = false; document.body.style.overflow="hidden"; setTimeout(()=>document.getElementById("gate-yes").focus(),50); }
+  document.getElementById("gate-yes").addEventListener("click", () => { store.set("lt-21","yes"); gate.hidden = true; document.body.style.overflow=""; });
+  document.getElementById("gate-no").addEventListener("click", () => { document.getElementById("gate-msg").style.display="block"; });
+
+  document.querySelectorAll(".hero .rv").forEach((el,i) => el.style.animationDelay = i*90 + "ms");
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  applyLang(lang);
+  setInterval(renderStatus, 60000);
+})();
+</script>
+</body>
+</html>
