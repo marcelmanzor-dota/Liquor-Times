@@ -4,7 +4,7 @@ Single-page site for **Liquor Time**, 830 E 49th St, Hialeah FL 33013 · (305) 6
 Plain HTML/CSS/JS, no build step. Deploy on GitHub Pages from the repo root (`main` branch).
 
 ## What's in it
-- Hero with the store's real logo and a "bottle gauge" that fills/empties with today's remaining open hours (live, Hialeah time).
+- Hero: scroll-driven pour. Scrolling down scrubs the pour video (frames in `pour/`) until the bottle is full; scrolling up empties it. The status card shows live open/closed and time left today.
 - Photos of the store (from the public Google listing), product categories, 20 real Google reviews, hours table with today highlighted, Google Map embed.
 - EN/ES toggle, 21+ age gate, call and directions buttons, LocalBusiness schema for Google.
 
